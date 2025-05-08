@@ -1,0 +1,270 @@
+/* Modern Task Manager Styles */
+
+/* Custom Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    color: #333;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Section Styling */
+section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(31, 38, 135, 0.25);
+}
+
+/* Form Section */
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #6a11cb 0%, #2575fc 100%);
+    border-radius: 10px 0 0 10px;
+}
+
+#form h2 {
+    color: #6a11cb;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form Controls */
+.form-label {
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    border: none;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    background-color: #fff;
+}
+
+input[type="color"].form-control {
+    height: 48px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+select.form-control {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a5568'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(135deg, #5a01bb 0%, #1565ec 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* List Section */
+#list {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #11998e 0%, #38ef7d 100%);
+    border-radius: 10px 0 0 10px;
+}
+
+/* Task Container */
+.task-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.task-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task {
+    padding: 16px;
+}
+
+.task-information h5 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #2d3748;
+}
+
+.task-information p {
+    color: #718096;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.task-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.task-status.New {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+
+.task-status.Completed {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+.task-status.In-progress {
+    background-color: #fefcbf;
+    color: #d69e2e;
+}
+
+.task-date-budget {
+    display: flex;
+    justify-content: space-between;
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+/* Empty State */
+#list:empty::after {
+    content: "No tasks yet. Add a task to get started!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0aec0;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-container {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    #form, #list {
+        width: 100%;
+    }
+}
+
+/* Extra Animations for Form Elements */
+#form div {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#form div:nth-child(1) { animation-delay: 0.1s; }
+#form div:nth-child(2) { animation-delay: 0.2s; }
+#form div:nth-child(3) { animation-delay: 0.3s; }
+#form div:nth-child(4) { animation-delay: 0.4s; }
+#form div:nth-child(5) { animation-delay: 0.5s; }
+#form div:nth-child(6) { animation-delay: 0.6s; }
+#form div:nth-child(7) { animation-delay: 0.7s; }

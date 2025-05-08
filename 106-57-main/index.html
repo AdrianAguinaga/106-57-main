@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./styles/app.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <section id="list">Get Section</section>
+
+        <section id="form">
+           
+            <div>
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" id="txtTitle">
+            </div>
+            <div>
+                <label class="form-label">description</label>
+                <textarea rows="3" class="form-control" id="txtDescription"></textarea>
+            </div>
+            <div>
+                 <label class="form-label">Color</label>
+                 <input type="color" class="form-control" id="selColor">
+             </div>                
+            <div>
+                 <label class="form-label">Date</label>
+                 <input type="datetime-local" class="form-control" id="selDate">
+             </div>
+            <div>
+                 <label class="form-label">Status</label>
+                 <select class="form-control" id="selStatus">
+                    <option>New</option>
+                    <option>In progress</option>
+                    <option>Completed</option>
+                 </select>
+             </div>
+             <div>
+                <label class="form-label">Budget</label>
+                <input type="number" class="form-control" id="numBudget">
+            </div> 
+            <div>
+                <button class="btn btn-primary" id="btnSave">Submit</button>
+            </div>
+        </section>
+
+       
+
+
+        <!--
+        title
+        description
+        color
+        startDate
+        status
+        budget
+         -->
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/task.js"></script>
+</body>
+</html>
